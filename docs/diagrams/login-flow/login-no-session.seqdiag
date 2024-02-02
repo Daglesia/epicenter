@@ -1,0 +1,13 @@
+User->Daglesia Portal: trying to access service
+Daglesia Portal->Epicenter: GET /session
+note over Daglesia Portal, Epicenter:  check if session on server exists 
+Epicenter->Daglesia Portal: HTTP 204
+Daglesia Portal -> User: redirect to login page
+User->Daglesia Portal: login with credentials
+note over User, Daglesia Portal:  send username + hashed password 
+Daglesia Portal->Epicenter: POST /login
+note over Daglesia Portal, Epicenter:  verify user, create session
+Epicenter->Daglesia Portal: HTTP 200
+note over Daglesia Portal, Epicenter:  response containing token
+Daglesia Portal -> User: redirect back to service
+note over User, Daglesia Portal:  save token in local storage

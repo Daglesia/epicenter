@@ -1,0 +1,6 @@
+User->Daglesia Portal: trying to access service
+Daglesia Portal->Epicenter: GET /session with token in storage
+note over Daglesia Portal, Epicenter: check if session on server exists
+note right of Epicenter: verify token, \n checks if not outdated \n if exists check allowed services
+Epicenter->Daglesia Portal: HTTP 200
+Daglesia Portal -> User: allow access to service
